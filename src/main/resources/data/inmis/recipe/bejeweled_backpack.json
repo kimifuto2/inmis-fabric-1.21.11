@@ -6,15 +6,9 @@
     "#e#"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:diamond"
-    },
-    "X": {
-      "item": "inmis:gilded_backpack"
-    },
-    "e": {
-      "item": "minecraft:emerald"
-    }
+    "#": "minecraft:diamond",
+    "X": "inmis:gilded_backpack",
+    "e": "minecraft:emerald"
   },
   "result": {
     "id": "inmis:bejeweled_backpack"

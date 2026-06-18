@@ -6,15 +6,9 @@
     "bbb"
   ],
   "key": {
-    "e": {
-      "item": "minecraft:dragon_head"
-    },
-    "b": {
-      "item": "minecraft:end_stone"
-    },
-    "X": {
-      "item": "inmis:withered_backpack"
-    }
+    "e": "minecraft:dragon_head",
+    "b": "minecraft:end_stone",
+    "X": "inmis:withered_backpack"
   },
   "result": {
     "id": "inmis:endless_backpack"

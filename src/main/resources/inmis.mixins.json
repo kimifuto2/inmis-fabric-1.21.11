@@ -3,8 +3,7 @@
   "package": "draylar.inmis.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "PlayerDropMixin",
-    "ShapedRecipeMixin"
+    "PlayerDropMixin"
   ],
   "client": [
     "client.PlayerEntityFeatureMixin",

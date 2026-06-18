@@ -6,15 +6,9 @@
     "bbb"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:nether_star"
-    },
-    "b": {
-      "item": "minecraft:soul_sand"
-    },
-    "X": {
-      "item": "inmis:bejeweled_backpack"
-    }
+    "#": "minecraft:nether_star",
+    "b": "minecraft:soul_sand",
+    "X": "inmis:bejeweled_backpack"
   },
   "result": {
     "id": "inmis:withered_backpack"

@@ -6,15 +6,9 @@
     "#f#"
   ],
   "key": {
-    "#": {
-      "item": "minecraft:netherite_ingot"
-    },
-    "f": {
-      "item": "minecraft:magma_block"
-    },
-    "X": {
-      "item": "inmis:bejeweled_backpack"
-    }
+    "#": "minecraft:netherite_ingot",
+    "f": "minecraft:magma_block",
+    "X": "inmis:bejeweled_backpack"
   },
   "result": {
     "id": "inmis:blazing_backpack"

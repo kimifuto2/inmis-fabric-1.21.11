@@ -6,12 +6,8 @@
     " # "
   ],
   "key": {
-    "#": {
-      "item": "minecraft:leather"
-    },
-    "X": {
-      "item": "minecraft:chest"
-    }
+    "#": "minecraft:leather",
+    "X": "minecraft:chest"
   },
   "result": {
     "id": "inmis:baby_backpack"
