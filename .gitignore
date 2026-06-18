@@ -5,8 +5,7 @@ build/
 out/
 classes/
 
-# local dependencies & design assets
-libs/
+# design assets
 assets/
 resources/
 
