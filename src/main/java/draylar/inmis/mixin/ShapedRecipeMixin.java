@@ -23,7 +23,7 @@ public abstract class ShapedRecipeMixin {
     @Final
     private ItemStack result;
 
-    @Inject(method = "craft", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "craft(Lnet/minecraft/recipe/input/CraftingRecipeInput;Lnet/minecraft/registry/RegistryWrapper$WrapperLookup;)Lnet/minecraft/item/ItemStack;", at = @At("HEAD"), cancellable = true)
     private void craftMixin(CraftingRecipeInput craftingRecipeInput, RegistryWrapper.WrapperLookup wrapperLookup, CallbackInfoReturnable<ItemStack> info) {
         // get both backpacks
         if (craftingRecipeInput.getStackCount() > 4) {
