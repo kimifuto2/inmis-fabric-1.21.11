@@ -26,7 +26,8 @@ public abstract class ShapedRecipeMixin {
     @Inject(method = "craft(Lnet/minecraft/recipe/input/CraftingRecipeInput;Lnet/minecraft/registry/RegistryWrapper$WrapperLookup;)Lnet/minecraft/item/ItemStack;", at = @At("HEAD"), cancellable = true)
     private void craftMixin(CraftingRecipeInput craftingRecipeInput, RegistryWrapper.WrapperLookup wrapperLookup, CallbackInfoReturnable<ItemStack> info) {
         // get both backpacks
-        if (craftingRecipeInput.getStackCount() > 4) {
+        // Only run for recipes on at least a 3x3 grid so slot 4 is the center.
+        if (craftingRecipeInput.getWidth() * craftingRecipeInput.getHeight() > 4) {
             ItemStack centerSlotItemStack = craftingRecipeInput.getStackInSlot(4);
 
             // only attempt to apply nbt if the center stack of the original recipe was a backpack
