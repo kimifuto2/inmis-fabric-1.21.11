@@ -1,11 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "inmis:item/frayed_backpack",
-    "tints": [
-      {
-        "type": "minecraft:dye"
-      }
-    ]
+    "model": "inmis:item/frayed_backpack"
   }
 }
