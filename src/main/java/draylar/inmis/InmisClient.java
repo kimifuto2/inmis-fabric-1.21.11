@@ -14,8 +14,6 @@ public class InmisClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        // HandledScreens.register is now private in 1.21.11
-        // Screen registration happens automatically through ScreenHandlerProvider
         HandledScreens.register(Inmis.BACKPACK_SCREEN_HANDLER, BackpackHandledScreen::new);
         InmisKeybinds.initialize();
 

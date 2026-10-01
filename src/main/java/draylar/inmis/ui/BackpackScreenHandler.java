@@ -23,10 +23,17 @@ import net.minecraft.util.Identifier;
 
 public class BackpackScreenHandler extends ScreenHandler {
 
+    public static ItemStack PENDING_STACK = ItemStack.EMPTY;
+
     private final ItemStack backpackStack;
     private final BackpackComponent backpackComponent;
     private final int padding = 8;
     private final int titleSpace = 10;
+
+    public BackpackScreenHandler(int synchronizationID, PlayerInventory playerInventory) {
+        this(synchronizationID, playerInventory, PENDING_STACK);
+        PENDING_STACK = ItemStack.EMPTY;
+    }
 
     public BackpackScreenHandler(int synchronizationID, PlayerInventory playerInventory, BackpackScreenPacket backpackScreenPacket) {
         this(synchronizationID, playerInventory, backpackScreenPacket.stack());
@@ -106,7 +113,6 @@ public class BackpackScreenHandler extends ScreenHandler {
     }
 
     public Point getPlayerInvSlotPosition(Dimension dimension, int x, int y) {
-        // BackpackInfo tier = getItem().getTier();
         return new Point(dimension.getWidth() / 2 - 9 * 9 + x * 18, dimension.getHeight() - padding - 4 * 18 - 3 + y * 18 + (y == 3 ? 4 : 0));
     }
 
@@ -165,8 +171,6 @@ public class BackpackScreenHandler extends ScreenHandler {
 
         @Override
         public boolean canInsert(ItemStack stack) {
-            // If the "unstackables only" config option is turned on,
-            // do not allow players to insert stacks with >1 max count.
             if (Inmis.CONFIG.unstackablesOnly) {
                 if (stack.getMaxCount() > 1) {
                     return false;
@@ -174,9 +178,8 @@ public class BackpackScreenHandler extends ScreenHandler {
             }
 
             Item item = stack.getItem();
-            // Do not allow players to insert shulkers into backpacks.
-            if (inventory instanceof  SimpleInventory) {
-                if (Inmis.CONFIG.disableShulkers) {//&& inventory instanceof BackpackInventory
+            if (inventory instanceof SimpleInventory) {
+                if (Inmis.CONFIG.disableShulkers) {
                     if (item instanceof BlockItem blockItem) {
                         return !(blockItem.getBlock() instanceof ShulkerBoxBlock);
                     }
